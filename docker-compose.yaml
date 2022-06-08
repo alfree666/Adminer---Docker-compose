@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+  adminer:
+    image: adminer
+    environment:    
+      ADMINER_DESIGN: rmsoft  #nette #nqp
+      ADMINER_DEFAULT_SERVER: db  
+    restart: unless-stopped      
+    ports:
+      - "8080:8080"  
+    depends_on:
+      - db    
